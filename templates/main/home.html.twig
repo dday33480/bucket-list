@@ -1,8 +1,17 @@
 {% extends 'base.html.twig' %}
     
 {% block body %}    
-    <h1>Coming soon</h1>
-    <h1>My Bucket List</h1>
+    <h1>Latest activities added to the Bucket List</h1>
+    <div class="wish-list">
+        {% for wish in wishes %}
+        <article>
+            <div class="wish-articles">
+                <h2><a href="{{ path('wish_list') }}">{{ wish.title }}</a></h2>
+                <h6>Date published: {{ wish.dateCreated | date('d-m-Y') }}</h6>
+            </div>
+        </article>
+        {% endfor %}
+    </div>
 {% endblock %}
 
 {% block title %}
