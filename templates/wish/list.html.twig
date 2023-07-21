@@ -1,17 +1,18 @@
 {% extends 'base.html.twig' %}
-
+    
 {% block body %}    
-    <div>
+    <h1>All activities added to the Bucket List</h1>
+    <section class="wish-list">
         {% for wish in wishes %}
-            <article class="wish">
-                <div>
-                    <h1>{{ wish.title }}</h1>
-                    <h4>Created by: {{ wish.author }}</h4>
-                    <h6>Published on: {{ wish.dateCreated | date('d-m-Y') }}</h6>
-                </div>
-            </article>
+        <article>
+            <div class="wish-articles">
+                <h2><a href="{{ path('list_details', { 'id': wish.id }) }}">{{ wish.title }}</a></h2>
+                <h3>Author: {{ wish.author }}</h3>
+                <h6>Date published: {{ wish.dateCreated | date('d-m-Y') }}</h6>
+            </div>
+        </article>
         {% endfor %}
-    </div>
+    </section>
 {% endblock %}
 
 {% block title %}

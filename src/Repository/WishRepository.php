@@ -64,7 +64,7 @@ class WishRepository extends ServiceEntityRepository
 
         $query = $queryBuilder->getQuery();
 
-        return $query;
+        return $query->getResult();
     }
 
 //    /**

@@ -2,16 +2,16 @@
     
 {% block body %}    
     <h1>Latest activities added to the Bucket List</h1>
-    <div class="wish-list">
+    <section class="wish-list">
         {% for wish in wishes %}
-        <article>
-            <div class="wish-articles">
-                <h2><a href="{{ path('wish_list') }}">{{ wish.title }}</a></h2>
+        <article class="wish-articles">
+            <div>
+                <h2><a href="{{ path('list_details', {'id': wish.id }) }}">{{ wish.title }}</a></h2>
                 <h6>Date published: {{ wish.dateCreated | date('d-m-Y') }}</h6>
             </div>
         </article>
         {% endfor %}
-    </div>
+    </section>
 {% endblock %}
 
 {% block title %}
