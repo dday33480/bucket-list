@@ -6,7 +6,7 @@
         {% for wish in wishes %}
         <article class="wish-articles">
             <div>
-                <h2><a href="{{ path('list_details', {'id': wish.id }) }}">{{ wish.title }}</a></h2>
+                <h2><a href="{{ path('wish_details', {'id': wish.id }) }}">{{ wish.title }}</a></h2>
                 <h6>Date published: {{ wish.dateCreated | date('d-m-Y') }}</h6>
             </div>
         </article>
